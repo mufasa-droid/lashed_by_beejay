@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, ArrowRight, Eye, Plus } from 'lucide-react';
+import { ArrowRight, Eye, Sparkles } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 
 export default function ServiceCard({ service, onSelectDetail, onQuickBook }) {
@@ -25,7 +25,7 @@ export default function ServiceCard({ service, onSelectDetail, onQuickBook }) {
 
         {/* Category Pill */}
         <div className="absolute top-3.5 left-3.5 bg-[#141312]/80 backdrop-blur-md px-3 py-1 rounded-full text-[9px] uppercase tracking-[0.2em] font-semibold text-[#FAF8F5]">
-          {service.category}
+          {service.categoryLabel || service.category}
         </div>
       </div>
 
@@ -41,19 +41,19 @@ export default function ServiceCard({ service, onSelectDetail, onQuickBook }) {
             </h3>
           </div>
           
-          <p className="text-xs text-[#6E6963] line-clamp-2 leading-relaxed">
+          <p className="text-xs text-[#6E6963] line-clamp-2 leading-relaxed font-light">
             {service.shortDescription}
           </p>
         </div>
 
-        {/* Price & Duration */}
+        {/* Price & Actions */}
         <div className="pt-3 border-t border-[#F0EDE6] flex items-center justify-between">
           <div>
-            <span className="font-serif text-xl font-semibold text-[#141312]">
+            <span className="font-serif text-2xl font-semibold text-[#141312]">
               {BUSINESS_CONFIG.currency}{service.price}
             </span>
-            <span className="text-[11px] text-[#8E8A85] block -mt-0.5 flex items-center gap-1">
-              <Clock className="w-3 h-3 text-[#C5A880]" /> {service.duration}
+            <span className="text-[10px] text-[#8E8A85] block font-sans uppercase tracking-wider">
+              {service.category === 'refills' ? '2–3 Wk Refill' : 'Official Rate'}
             </span>
           </div>
 

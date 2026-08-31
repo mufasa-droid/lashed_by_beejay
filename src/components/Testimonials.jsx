@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Quote, Sparkles } from 'lucide-react';
 import { TESTIMONIALS } from '../data/testimonials';
+import { BUSINESS_CONFIG } from '../config/businessConfig';
 import { animateSectionReveal } from '../animations/gsapEffects';
 
 import 'swiper/css';
@@ -25,10 +26,10 @@ export default function Testimonials() {
             Client Words
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight mb-4">
-            Experiences at Maison Éclat
+            Experiences with Lashed by Beejay
           </h2>
           <p className="text-xs sm:text-sm text-[#5C5854] font-light">
-            Reflections from our cherished private studio clientele.
+            Reflections from clients on their customized sets, retention, and studio appointments.
           </p>
         </div>
 

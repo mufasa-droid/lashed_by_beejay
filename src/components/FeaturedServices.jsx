@@ -1,11 +1,13 @@
 import React, { useRef, useEffect } from 'react';
-import { ArrowRight, Sparkles, Clock } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 import { animateSectionReveal } from '../animations/gsapEffects';
 
 export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
   const sectionRef = useRef(null);
+  
+  // Highlight top 4 signature full sets
   const featured = SERVICES.filter(s => s.featured).slice(0, 4);
 
   useEffect(() => {
@@ -20,14 +22,14 @@ export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-              Curated Offerings
+              Signature Sets
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight">
-              Signature Atelier Services
+              Featured Lash Services
             </h2>
           </div>
           <p className="text-sm text-[#5C5854] max-w-md font-light leading-relaxed">
-            Every session is a masterclass in dry cuticle alignment, structural apex balance, and luxury long-wear aesthetics.
+            Every set is customized to your natural eye shape, facial symmetry, and personal aesthetic. Where every blink speaks confidence.
           </p>
         </div>
 
@@ -47,7 +49,7 @@ export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
                       {indexStr}
                     </span>
                     <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-[#8E8A85] bg-[#F5F2EC] px-2.5 py-1 rounded-full">
-                      {service.category}
+                      {service.categoryLabel || 'Full Set'}
                     </span>
                   </div>
 
@@ -80,11 +82,11 @@ export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
                 {/* Price and CTA */}
                 <div className="pt-4 border-t border-[#F0EDE6] flex items-center justify-between">
                   <div>
-                    <span className="font-serif text-2xl font-medium text-[#141312]">
+                    <span className="font-serif text-2xl font-semibold text-[#141312]">
                       {BUSINESS_CONFIG.currency}{service.price}
                     </span>
-                    <span className="text-[11px] text-[#8E8A85] block font-light">
-                      {service.duration}
+                    <span className="text-[10px] text-[#8E8A85] block font-light uppercase tracking-wider">
+                      Official Price
                     </span>
                   </div>
 
@@ -113,7 +115,7 @@ export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
             }}
             className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-[#141312] hover:text-[#8F7249] border-b border-[#141312] hover:border-[#8F7249] pb-1 transition-all"
           >
-            <span>Explore Complete Treatment Catalog & Add-Ons</span>
+            <span>View Full Menu: All Sets, 2–3 Wk Refills & Add-Ons</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>

@@ -1,21 +1,19 @@
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 
 /**
- * Generates a clean, professional WhatsApp booking message and opens the chat.
+ * Generates the official WhatsApp booking message for Lashed by Beejay and opens the chat.
  * 
  * @param {Object} bookingDetails
- * @param {string} bookingDetails.serviceName - Name of the requested service
- * @param {string|number} bookingDetails.servicePrice - Price of the service
- * @param {string} bookingDetails.serviceDuration - Duration of service
- * @param {string} bookingDetails.preferredDate - Requested date (YYYY-MM-DD)
- * @param {string} bookingDetails.preferredTime - Requested time slot / window
- * @param {string} [bookingDetails.clientName] - Optional client name
- * @param {string} [bookingDetails.additionalNote] - Any special requests, nail art ideas, or removals needed
+ * @param {string} bookingDetails.serviceName - Name of the requested lash service
+ * @param {string|number} bookingDetails.servicePrice - Price of the service (e.g. "12,000" or "25,000")
+ * @param {string} bookingDetails.preferredDate - Requested date string
+ * @param {string} bookingDetails.preferredTime - Requested time slot
+ * @param {string} [bookingDetails.clientName] - Client name
+ * @param {string} [bookingDetails.additionalNote] - Additional note or lash preferences
  */
 export function openWhatsAppBooking({
-  serviceName = "Custom Consultation / Manicure",
+  serviceName = "Custom Lash Consultation / Full Set",
   servicePrice,
-  serviceDuration,
   preferredDate,
   preferredTime,
   clientName,
@@ -23,38 +21,35 @@ export function openWhatsAppBooking({
 }) {
   const brand = BUSINESS_CONFIG.brandName;
   const number = BUSINESS_CONFIG.whatsappNumber;
+  const currency = BUSINESS_CONFIG.currency;
 
-  let message = `Hello! I would like to book a bespoke appointment with ${brand}.\n\n`;
+  let message = `Hello! I'd like to book an appointment with ${brand}.\n\n`;
   
-  message += `✦ Service: ${serviceName}`;
-  if (servicePrice || serviceDuration) {
-    const priceStr = servicePrice ? `${BUSINESS_CONFIG.currency}${servicePrice}` : '';
-    const durStr = serviceDuration ? `${serviceDuration}` : '';
-    const details = [priceStr, durStr].filter(Boolean).join(' • ');
-    if (details) message += ` (${details})`;
+  message += `Service: ${serviceName}\n`;
+  if (servicePrice) {
+    message += `Price: ${currency}${servicePrice}\n`;
   }
-  message += `\n`;
 
   if (preferredDate) {
-    message += `✦ Preferred Date: ${preferredDate}\n`;
+    message += `Preferred Date: ${preferredDate}\n`;
   }
   if (preferredTime) {
-    message += `✦ Preferred Time: ${preferredTime}\n`;
+    message += `Preferred Time: ${preferredTime}\n`;
   }
-  if (clientName) {
-    message += `✦ Name: ${clientName}\n`;
+  if (clientName && clientName.trim().length > 0) {
+    message += `Client Name: ${clientName.trim()}\n`;
   }
 
   if (additionalNote && additionalNote.trim().length > 0) {
-    message += `\n✦ Additional Notes / Removal Info:\n"${additionalNote.trim()}"\n`;
+    message += `\nAdditional Note:\n"${additionalNote.trim()}"\n`;
   }
 
-  message += `\nPlease let me know your available slots. Thank you!`;
+  message += `\nI understand that a ${currency}${BUSINESS_CONFIG.depositAmount} non-refundable deposit is required to secure my booking.\n\nPlease let me know the available slots.\n\nThank you!`;
 
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${number}?text=${encodedMessage}`;
 
-  // Open in new tab or native app
+  // Open in new tab or native WhatsApp client
   window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   return whatsappUrl;
 }

@@ -51,14 +51,14 @@ export default function Portfolio() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
             <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-              The Archive
+              The Gallery
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight">
-              Selected Works & Editorial Sets
+              Selected Lash Works & Sets
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5C5854] max-w-md font-light leading-relaxed">
-            A visual documentation of precision cuticle alignment, custom French architecture, and glazed chrome artistry.
+            Visual proof of our handcrafted volume fans, seamless classic isolation, and customized wispy mapping.
           </p>
         </div>
 

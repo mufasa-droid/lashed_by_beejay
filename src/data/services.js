@@ -1,168 +1,201 @@
 /**
- * Nail Studio Services Data Catalog
- * Organized by categories with full pricing, duration, features, and imagery.
+ * Lashed by Beejay — Official Services & Price Catalog
+ * Exact source of truth for full sets, 2–3 week refills, and add-ons.
  */
 
 export const SERVICE_CATEGORIES = [
-  { id: "all", name: "All Offerings" },
-  { id: "signature", name: "Signature Manicures" },
-  { id: "gel", name: "Russian & BIAB Gel" },
-  { id: "extensions", name: "Sculptural Extensions" },
-  { id: "art", name: "Editorial Nail Art" },
-  { id: "pedicure", name: "Restorative Pedicures" },
+  { id: "all", name: "All Services" },
+  { id: "full-sets", name: "Full Sets" },
+  { id: "refills", name: "Refills (2–3 Weeks)" },
+  { id: "addons", name: "Add-Ons & Care" },
 ];
 
 export const SERVICES = [
+  // ================= FULL SETS =================
   {
-    id: "russian-manicure",
-    name: "The Atelier Russian Manicure",
-    category: "gel",
+    id: "classic-set",
+    name: "Classic Set",
+    category: "full-sets",
+    categoryLabel: "Full Set",
     featured: true,
-    price: 110,
-    duration: "75 min",
-    shortDescription: "Dry e-file precision cuticle alignment, nail plate architecture rebalancing, and long-wear reinforced gel overlay.",
-    fullDescription: "Our flagship dry hardware technique. We utilize diamond micro-bits to gently refine the proximal fold and lateral sidewalls without soaking. Completed with a multi-layered apex alignment and an ultra-close gel finish that stays immaculate for 4+ weeks.",
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Hardware dry cuticle refinement & deep cleansing",
-      "Apex structural architecture alignment",
-      "Reinforced high-gloss builder layer",
-      "Choice of neutral or glazed haute tone",
-      "Nourishing golden jojoba & peptide hydration"
-    ],
-    idealFor: "Clients seeking razor-sharp clean cuticles and 4-week durability without lifting."
+    price: "12,000",
+    rawPrice: 12000,
+    shortDescription: "Natural & elegant everyday look.",
+    fullDescription: "An individual extension applied to each healthy natural lash for a subtle, mascara-like enhancement. Perfect for everyday sophistication and effortless natural beauty.",
+    image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "1:1 Ratio • Natural Elegance"
   },
   {
-    id: "sculpted-extensions",
-    name: "Sculptural Hard Gel Extensions",
-    category: "extensions",
+    id: "hybrid-set",
+    name: "Hybrid Set",
+    category: "full-sets",
+    categoryLabel: "Full Set",
     featured: true,
-    price: 165,
-    duration: "105 min",
-    shortDescription: "Custom form-sculpted architectural extensions tailored to your natural finger anatomy and desired silhouette.",
-    fullDescription: "No plastic glued tips. Every nail is custom sculpted using paper forms and hypoallergenic European hard gel to construct an elegant C-curve and featherlight strength. Shaped into almond, stiletto, coffin, or natural square.",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Full dry prep & gentle nail bed sanitization",
-      "Custom form tailoring for zero-bulk extensions",
-      "Precision structural filing & balance check",
-      "Ultra-gloss gel shield finish",
-      "Heated botanical oil massage"
-    ],
-    idealFor: "Lengthening and refining uneven nail beds with natural lightness."
+    price: "17,000",
+    rawPrice: 17000,
+    shortDescription: "A perfect mix of classic and volume lashes.",
+    fullDescription: "A custom blend of classic single lashes and handmade volume fans. Creates a textured, slightly fuller look with balanced dimension.",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Classic + Volume Blend • Textured Dimension"
   },
   {
-    id: "editorial-chrome-art",
-    name: "Haute Chrome & Glaze Artistry",
-    category: "art",
+    id: "volume-set",
+    name: "Volume Set",
+    category: "full-sets",
+    categoryLabel: "Full Set",
     featured: true,
-    price: 145,
-    duration: "90 min",
-    shortDescription: "Micro-fine pearlescent oyster powders, liquid metal molten silver accents, or glazed mirror reflections.",
-    fullDescription: "An homage to modern high-fashion aesthetics. Featuring hand-rubbed micronized chrome pigments, 3D molten silver drips, micro-encapsulated gold foil, or clean glazed donut iridescence on your choice of gel base.",
-    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Precision dry manicure prep",
-      "Base shade customized to your skin undertone",
-      "Bespoke chrome / 3D molten chrome design (all 10 nails)",
-      "Scratch-resistant non-wipe armor top coat",
-      "Silk cuticle mist"
-    ],
-    idealFor: "Editorial fashion events, brides, and lovers of futuristic minimalism."
-  },
-  {
-    id: "minimalist-line-art",
-    name: "Bespoke Minimalist Nail Art",
-    category: "art",
-    featured: true,
-    price: 135,
-    duration: "90 min",
-    shortDescription: "Delicate negative space, micro-French lines, geometric accents, and fine-line brushwork.",
-    fullDescription: "Subtle elegance designed for everyday luxury. Includes fine-line hand-painted geometry, micro-dots, ombre aura airbrushing, or modern abstract negative space that grows out seamlessly.",
-    image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Full hardware manicure & cuticle care",
-      "Hand-painted custom art consultation",
-      "Precision detailing with 000 sable brushes",
-      "Reinforcing protective layer",
-      "Aromatherapy hand treatment"
-    ],
-    idealFor: "Effortless chic aesthetics that match every wardrobe."
-  },
-  {
-    id: "biab-structured-overlay",
-    name: "BIAB™ Structured Builder Gel",
-    category: "gel",
-    featured: false,
-    price: 95,
-    duration: "60 min",
-    shortDescription: "Flexible, high-strength builder gel overlay to protect and grow weak natural nails.",
-    fullDescription: "Formulated specifically for brittle, thin, or post-acrylic nails. Builder In A Bottle (BIAB) reinforces the natural nail plate with a flexible, shock-absorbing polymer shield while infusing nourishing keratin boosters.",
+    price: "22,000",
+    rawPrice: 22000,
+    shortDescription: "Full, fluffy, and glamorous.",
+    fullDescription: "Delicate lightweight lash fans (3D–6D) handcrafted and applied to each natural lash. Delivers dramatic density, dark lash line, and fluffy softness.",
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Gentle natural nail preparation",
-      "Self-leveling builder apex structure",
-      "Natural nude, blush, or milky hue",
-      "High-shine diamond top seal",
-      "Cuticle serum application"
-    ],
-    idealFor: "Natural nail growth journeys and natural strength."
+    styleSummary: "Handmade Volume Fans • Fluffy Glamour"
   },
   {
-    id: "signature-couture-manicure",
-    name: "Couture Restorative Manicure",
-    category: "signature",
+    id: "mega-volume-set",
+    name: "Mega Volume Set",
+    category: "full-sets",
+    categoryLabel: "Full Set",
+    featured: true,
+    price: "28,000",
+    rawPrice: 28000,
+    shortDescription: "Maximum fullness for a bold statement.",
+    fullDescription: "Ultra-fine, featherlight lash fans (up to 16D) creating the darkest, densest, and most striking lash look without compromising natural lash safety.",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Ultra-Fine Fans • Maximum Density"
+  },
+  {
+    id: "wispy-set",
+    name: "Wispy Set",
+    category: "full-sets",
+    categoryLabel: "Full Set",
+    featured: true,
+    price: "25,000",
+    rawPrice: 25000,
+    shortDescription: "Soft, textured, and trendy.",
+    fullDescription: "Kim K-inspired textured lash styling combining closed fan spikes with soft fluffy volume base layers for an airy, dynamic, and photogenic finish.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Kim K Spikes + Fluffy Layering • Trendy Chic"
+  },
+  {
+    id: "wet-look-set",
+    name: "Wet Look Set",
+    category: "full-sets",
+    categoryLabel: "Full Set",
+    featured: true,
+    price: "25,000",
+    rawPrice: 25000,
+    shortDescription: "Defined, glossy lash effect.",
+    fullDescription: "Applied using unbloomed closed volume fans to create distinct, dark, glossy bundles. Gives the edgy aesthetic of freshly wet, defined mascara lashes.",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Closed Fan Spikes • Glossy & Defined"
+  },
+
+  // ================= REFILLS (2–3 WEEKS) =================
+  {
+    id: "classic-refill",
+    name: "Classic Refill",
+    category: "refills",
+    categoryLabel: "Refill (2–3 Weeks)",
     featured: false,
-    price: 80,
-    duration: "50 min",
-    shortDescription: "A gentle, non-gel sensory restoration with exfoliation, masque, and clean 10-free luxury polish.",
-    fullDescription: "A deeply therapeutic ritual. Includes dead skin enzyme smoothing, warm botanical compress, pressure-point hand massage with organic camellia oil, and a breathable toxin-free high-shine lacquer finish.",
+    price: "7,000",
+    rawPrice: 7000,
+    shortDescription: "Classic touch-up within 2–3 weeks (min 40% lashes remaining).",
+    fullDescription: "Gently removes outgrown extensions and places fresh classic lashes to restore full coverage. Valid only for existing Lashed by Beejay sets within 2–3 weeks.",
+    image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "2–3 Week Maintenance • 40%+ Retention"
+  },
+  {
+    id: "hybrid-refill",
+    name: "Hybrid Refill",
+    category: "refills",
+    categoryLabel: "Refill (2–3 Weeks)",
+    featured: false,
+    price: "10,000",
+    rawPrice: 10000,
+    shortDescription: "Hybrid touch-up within 2–3 weeks (min 40% lashes remaining).",
+    fullDescription: "Replenishes both classic singles and volume fans to restore seamless texture and fullness. For sets done by Lashed by Beejay within 2–3 weeks.",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "2–3 Week Maintenance • 40%+ Retention"
+  },
+  {
+    id: "volume-refill",
+    name: "Volume Refill",
+    category: "refills",
+    categoryLabel: "Refill (2–3 Weeks)",
+    featured: false,
+    price: "13,000",
+    rawPrice: 13000,
+    shortDescription: "Volume touch-up within 2–3 weeks (min 40% lashes remaining).",
+    fullDescription: "Replaces shed volume fans and rebalances lash line fullness with fresh handmade fans. For sets done by Lashed by Beejay within 2–3 weeks.",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "2–3 Week Maintenance • 40%+ Retention"
+  },
+  {
+    id: "mega-volume-refill",
+    name: "Mega Volume Refill",
+    category: "refills",
+    categoryLabel: "Refill (2–3 Weeks)",
+    featured: false,
+    price: "16,000",
+    rawPrice: 16000,
+    shortDescription: "Mega volume touch-up within 2–3 weeks (min 40% lashes remaining).",
+    fullDescription: "Restores ultra-dense drama and removes overgrown lash fans. Valid only within 2–3 weeks of initial set with at least 40% retention.",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "2–3 Week Maintenance • 40%+ Retention"
+  },
+
+  // ================= ADD-ONS =================
+  {
+    id: "bottom-lashes",
+    name: "Bottom Lashes",
+    category: "addons",
+    categoryLabel: "Add-On",
+    featured: false,
+    price: "5,000",
+    rawPrice: 5000,
+    shortDescription: "Enhance your lower lash line for complete eye definition.",
+    fullDescription: "Individual lower lash extensions carefully placed to open up the eyes and complete your full glam look with proportional balance.",
+    image: "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Lower Lash Line Definition"
+  },
+  {
+    id: "lash-removal",
+    name: "Lash Removal",
+    category: "addons",
+    categoryLabel: "Add-On & Care",
+    featured: false,
+    price: "5,000",
+    rawPrice: 5000,
+    shortDescription: "Gentle and safe professional lash extension removal.",
+    fullDescription: "Safe, painless chemical cream breakdown of lash extension adhesive without damaging your natural lashes.",
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Botanical floral hand soak & enzyme exfoliation",
-      "Gentle cuticle grooming and shaping",
-      "15-minute tension release hand & forearm massage",
-      "High-shine buff or breathable vegan lacquer",
-      "Organic rosehip cuticle seal"
-    ],
-    idealFor: "Non-gel lovers desiring ultimate relaxation and pristine natural nails."
+    styleSummary: "Safe & Damage-Free Professional Removal"
   },
   {
-    id: "haute-botanical-pedicure",
-    name: "Haute Botanical Pedicure Ritual",
-    category: "pedicure",
+    id: "lash-bath",
+    name: "Lash Bath",
+    category: "addons",
+    categoryLabel: "Add-On & Care",
     featured: false,
-    price: 115,
-    duration: "70 min",
-    shortDescription: "Magnesium foot soak, lactic acid callus softening, hot stone massage, and long-wear gel pedicure.",
-    fullDescription: "Comprehensive foot wellness and aesthetic perfection. Your feet are immersed in an organic epsom & lavender soak, followed by ultrasonic dead skin elimination, hot stone reflexology, and clean gel alignment.",
-    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "Magnesium & mineral detox foot soak",
-      "AHA/BHA gentle callus smoothing",
-      "Toenail shaping and dry cuticle contouring",
-      "Heated basalt stone lower leg massage",
-      "Long-wear no-smudge gel polish"
-    ],
-    idealFor: "Total relaxation and flawlessly styled toes for all seasons."
+    price: "2,000",
+    rawPrice: 2000,
+    shortDescription: "Deep cleansing treatment for optimal lash hygiene and retention.",
+    fullDescription: "Oil-free botanical foam cleanse that removes makeup residues, natural oils, and buildup for pristine retention.",
+    image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Oil-Free Deep Cleansing Prep"
   },
   {
-    id: "luxury-gel-infill",
-    name: "Studio Infill & Rebalancing",
-    category: "extensions",
+    id: "colored-lash-addon",
+    name: "Colored Lash Add-On",
+    category: "addons",
+    categoryLabel: "Add-On & Customization",
     featured: false,
-    price: 100,
-    duration: "75 min",
-    shortDescription: "Rebalancing apex growth, cuticle refresh, and color replacement for existing extensions.",
-    fullDescription: "Recommended every 3 to 4 weeks. We rebalance the apex weight distribution, eliminate any micro-lifting, and apply a completely new shade or design to keep your extensions structurally sound and stunning.",
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=900&auto=format&fit=crop",
-    includes: [
-      "De-bulking & structural re-alignment",
-      "Complete dry hardware cuticle cleanup",
-      "New hard gel foundation layer",
-      "Fresh gel color or design application",
-      "Hydrating treatment"
-    ],
-    idealFor: "Maintaining existing gel extensions without full removal."
+    price: "3,000",
+    rawPrice: 3000,
+    shortDescription: "Add subtle or vibrant colored lash accents to your set.",
+    fullDescription: "Custom colored lash flares (brown, blue, purple, ombre, or custom highlights) integrated seamlessly into your full set.",
+    image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=900&auto=format&fit=crop",
+    styleSummary: "Custom Tonal / Ombre Lash Highlights"
   }
 ];

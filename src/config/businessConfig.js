@@ -1,57 +1,73 @@
 /**
- * Centralized Business Configuration
- * Edit this file to customize all studio details, branding, contact info, and WhatsApp number.
+ * Centralized Business Configuration for Lashed by Beejay
+ * Source of truth for brand name, phone, WhatsApp, Instagram, policies, and deposit terms.
  */
 
 export const BUSINESS_CONFIG = {
   // Brand Identity
-  brandName: "MAISON ÉCLAT",
-  tagline: "Bespoke Nail Artistry & Haute Studio",
-  shortBio: "Elevating contemporary manicures into sculptural art. Founded by Master Nail Stylist Elena Vance, dedicated to clean luxury, cuticle precision, and bespoke editorial finishes.",
-  establishedYear: "2021",
+  brandName: "LASHED BY BEEJAY",
+  brandDescriptor: "LASH STUDIO",
+  tagline: "WHERE EVERY BLINK SPEAKS CONFIDENCE.",
+  shortBio: "Dedicated to bespoke lash artistry, customized eye mapping, and premium lightweight extensions crafted for healthy, effortless glamour.",
   
   // WhatsApp Integration (Centralized)
-  // Format: International format without '+' or spaces (e.g., '14155552671' or '447123456789')
-  whatsappNumber: "14155552671", 
+  // Nigerian format: 09077824079 -> International standard 2349077824079
+  whatsappNumber: "2349077824079",
+  displayPhone: "09077824079",
   
   // Contact Details
   contact: {
-    phone: "+1 (415) 555-2671",
-    email: "concierge@maisoneclat.com",
-    address: "742 Mercer Street, Suite 4B",
-    city: "SoHo, New York, NY 10012",
-    googleMapsUrl: "https://maps.google.com/?q=SoHo+New+York",
+    phone: "09077824079",
+    whatsapp: "09077824079",
+    email: "contact@lashedbybeejay.com", // clearly marked placeholder
+    location: "Studio By Appointment Only",
+    instagram: "@lashed_by_beejay",
+    instagramUrl: "https://instagram.com/lashed_by_beejay"
   },
-
-  // Hours of Operation
-  hours: [
-    { days: "Tuesday – Friday", time: "10:00 AM – 7:30 PM" },
-    { days: "Saturday", time: "9:30 AM – 6:00 PM" },
-    { days: "Sunday & Monday", time: "Private Bookings / Closed" }
-  ],
 
   // Social Links
   socials: {
     instagram: {
-      handle: "@maisoneclat.nails",
-      url: "https://instagram.com"
-    },
-    tiktok: {
-      handle: "@maisoneclat",
-      url: "https://tiktok.com"
-    },
-    pinterest: {
-      handle: "@maisoneclat_atelier",
-      url: "https://pinterest.com"
+      handle: "@lashed_by_beejay",
+      url: "https://instagram.com/lashed_by_beejay"
     },
     whatsapp: {
-      display: "+1 (415) 555-2671",
-      url: "https://wa.me/14155552671"
+      display: "09077824079",
+      url: "https://wa.me/2349077824079"
     }
   },
 
-  // Currency & Booking Policies
-  currency: "$",
-  bookingDepositNote: "A 20% retainer is required via WhatsApp confirmation to secure your bespoke appointment time.",
-  cancellationPolicy: "Kindly notify us at least 24 hours in advance for cancellations or reschedules.",
+  // Currency & Financials
+  currency: "₦",
+  depositAmount: "5,000",
+  depositNote: "A ₦5,000 non-refundable deposit is required to secure your booking.",
+
+  // Studio Policies (Exact rules from business source of truth)
+  policies: [
+    {
+      id: "punctuality",
+      title: "Punctuality",
+      rule: "Please arrive on time for your appointment."
+    },
+    {
+      id: "deposit",
+      title: "Deposit Requirement",
+      rule: "A ₦5,000 non-refundable deposit is required to secure your booking."
+    },
+    {
+      id: "refill-window",
+      title: "Refill Window (2–3 Weeks)",
+      rule: "Refills are only available for sets done by Lashed by Beejay within 2–3 weeks."
+    },
+    {
+      id: "full-set-requirement",
+      title: "Full Set Condition",
+      rule: "After 3 weeks or with less than 40% of lashes remaining, a new full set will be required."
+    },
+    {
+      id: "aftercare",
+      title: "Lash Retention Care",
+      rule: "No oil-based products on your lashes for longer retention."
+    }
+  ]
 };

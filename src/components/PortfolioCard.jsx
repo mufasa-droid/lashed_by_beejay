@@ -22,7 +22,7 @@ export default function PortfolioCard({ item, onClick }) {
       />
 
       {/* Editorial Vignette & Hover Reveal */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#121110]/80 via-[#121110]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6 text-white">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#121110]/85 via-[#121110]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6 text-white">
         <div className="flex justify-end">
           <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
             <Eye className="w-4 h-4" />
@@ -31,7 +31,7 @@ export default function PortfolioCard({ item, onClick }) {
 
         <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
           <span className="text-[9px] uppercase tracking-[0.25em] font-semibold text-[#E8DEC8] block mb-1">
-            {item.category} • {item.shape}
+            {item.category.toUpperCase()} {item.curl ? `• ${item.curl}` : ''}
           </span>
           <h3 className="font-serif text-xl sm:text-2xl font-light text-white leading-tight">
             {item.title}
@@ -42,7 +42,7 @@ export default function PortfolioCard({ item, onClick }) {
         </div>
       </div>
 
-      {/* Permanent subtle tag on mobile/desktop */}
+      {/* Permanent subtle tag */}
       <div className="absolute bottom-3 left-3 bg-[#141312]/75 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] uppercase tracking-[0.18em] text-[#FAF8F5] group-hover:opacity-0 transition-opacity">
         {item.category}
       </div>

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Sparkles, Shield, HeartHandshake, CheckCircle2, Award, ArrowRight } from 'lucide-react';
+import { Sparkles, Shield, HeartHandshake, Eye, ArrowRight } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 import { animateSectionReveal } from '../animations/gsapEffects';
 
@@ -11,7 +11,7 @@ export default function About({ onOpenBooking }) {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 sm:py-32 bg-[#FBF9F5] border-b border-[#EAE6DE]">
+    <section id="about" ref={sectionRef} className="py-24 sm:py-32 bg-[#FAF7F0] border-b border-[#EAE6DE]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -26,22 +26,22 @@ export default function About({ onOpenBooking }) {
               <div className="relative rounded-xl overflow-hidden bg-[#DDD8CE] shadow-luxury aspect-[3/4]">
                 <img
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop"
-                  alt="Elena Vance — Founder & Lead Nail Stylist"
-                  className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                  alt="Lashed by Beejay — Lash Artist"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                 />
               </div>
 
-              {/* Float Experience Badge */}
-              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-[#181615] text-[#FAF8F5] p-5 rounded-2xl shadow-xl max-w-[210px] border border-[#2D2A27]">
+              {/* Float Hallmark Badge */}
+              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-[#181615] text-[#FAF8F5] p-5 rounded-2xl shadow-xl max-w-[220px] border border-[#2D2A27]">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A880] block font-semibold">
-                  Artisan Pedigree
+                  Studio Philosophy
                 </span>
-                <p className="font-serif text-2xl font-normal mt-0.5">
-                  10+ Years
+                <p className="font-serif text-xl font-normal mt-0.5 text-white">
+                  Precision Isolation
                 </p>
                 <p className="text-[11px] text-[#A6A097] leading-tight mt-1">
-                  Master Certification in European E-File Alignment.
+                  Tailored styling designed to protect and honor natural lash health.
                 </p>
               </div>
 
@@ -53,39 +53,39 @@ export default function About({ onOpenBooking }) {
             
             <div>
               <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-                The Philosophy
+                About the Studio
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight leading-tight">
-                "Where anatomical precision meets modern fashion."
+                "{BUSINESS_CONFIG.tagline}"
               </h2>
             </div>
 
             <div className="space-y-4 text-sm sm:text-base text-[#5C5854] font-light leading-relaxed">
               <p>
-                Founded in the heart of SoHo, <strong className="font-medium text-[#141312]">{BUSINESS_CONFIG.brandName}</strong> was born from a singular belief: a manicure is not a rushed chore, but a bespoke luxury ritual that honors the health and architecture of the natural nail.
+                At <strong className="font-medium text-[#141312]">{BUSINESS_CONFIG.brandName}</strong>, lash extensions are treated as a personalized form of facial architecture. Every eye is unique, requiring thoughtful mapping of curl, length, diameter, and fan density to enhance your natural beauty.
               </p>
               <p>
-                Unlike conventional salons that rely on abrasive water soaks and aggressive scraping, our dry Russian hardware technique delicately clears cuticle keratin without micro-tears. The result is seamless growth, an immaculate proximal contour, and nail strength that lasts for weeks.
+                From effortless everyday classic sets to sultry wet looks and dramatic mega volume, we prioritize meticulous isolation, clean application, and premium lightweight fibers. No clumping, no heavy weighing down—just immaculate lashes that let you wake up radiant and confident every morning.
               </p>
             </div>
 
-            {/* Studio Standards Checklist */}
+            {/* Studio Standards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="p-4 bg-[#FFFFFF] border border-[#E8E4DC] rounded-xl">
                 <h3 className="font-serif text-base font-medium text-[#141312] mb-1">
-                  Medical-Grade Sterilization
+                  Meticulous Natural Lash Care
                 </h3>
-                <p className="text-xs text-[#6E6963] leading-relaxed">
-                  Autoclave sanitized instruments sealed in single-use medical pouches opened before you.
+                <p className="text-xs text-[#6E6963] leading-relaxed font-light">
+                  Extensions matched strictly to the weight tolerance of each individual natural lash.
                 </p>
               </div>
 
               <div className="p-4 bg-[#FFFFFF] border border-[#E8E4DC] rounded-xl">
                 <h3 className="font-serif text-base font-medium text-[#141312] mb-1">
-                  100% 1-on-1 Private Sessions
+                  Private & Relaxing Setting
                 </h3>
-                <p className="text-xs text-[#6E6963] leading-relaxed">
-                  No overcrowding, no rushed queues. A peaceful private studio tailored entirely to you.
+                <p className="text-xs text-[#6E6963] leading-relaxed font-light">
+                  A peaceful, comfortable studio environment where you can unwind during your session.
                 </p>
               </div>
             </div>
@@ -94,10 +94,10 @@ export default function About({ onOpenBooking }) {
             <div className="pt-4 border-t border-[#EAE6DE] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
                 <span className="font-serif italic text-2xl text-[#141312] block">
-                  Elena Vance
+                  Beejay
                 </span>
                 <span className="text-[10px] uppercase tracking-widest text-[#8E8A85]">
-                  Founder & Lead Nail Artist • {BUSINESS_CONFIG.brandName}
+                  Founder & Lash Stylist • {BUSINESS_CONFIG.brandName}
                 </span>
               </div>
 
@@ -105,7 +105,7 @@ export default function About({ onOpenBooking }) {
                 onClick={() => onOpenBooking(null)}
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#141312] hover:text-[#8F7249] border-b border-[#141312] hover:border-[#8F7249] pb-1 transition-all"
               >
-                <span>Request a Private Consultation</span>
+                <span>Book Your Lash Session</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

@@ -1,133 +1,134 @@
 /**
- * Nail Art Studio Portfolio Showcase Data
- * Includes categories, high-res photography, techniques, and shape details.
+ * Lashed by Beejay — Portfolio & Visual Archive Data
+ * High-end editorial lash photography categorized by authentic lash styles.
  */
 
 export const PORTFOLIO_CATEGORIES = [
-  { id: "all", name: "All Works" },
-  { id: "french", name: "Modern French" },
-  { id: "chrome", name: "Chrome & Glazed" },
-  { id: "minimal", name: "Editorial Minimal" },
-  { id: "sculptural", name: "Sculpted Gel" },
-  { id: "art", name: "Abstract Art" },
+  { id: "all", name: "All Styles" },
+  { id: "classic", name: "Classic" },
+  { id: "hybrid", name: "Hybrid" },
+  { id: "volume", name: "Volume" },
+  { id: "mega", name: "Mega Volume" },
+  { id: "wispy", name: "Wispy" },
+  { id: "wet", name: "Wet Look" },
 ];
 
 export const PORTFOLIO_ITEMS = [
   {
     id: "portfolio-1",
-    title: "Glazed Oyster Chrome & Almond Apex",
-    category: "chrome",
-    aspect: "portrait", // 'portrait', 'square', 'tall'
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=900&auto=format&fit=crop",
-    technique: "Russian Manicure + Micro Pearl Chrome Powder",
-    shape: "Medium Almond",
-    description: "Multi-tonal pearlescent glow finished over a sheer milky rose base."
+    title: "Seamless Classic 1:1 Everyday Set",
+    category: "classic",
+    aspect: "portrait",
+    image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=900&auto=format&fit=crop",
+    technique: "Individual Silk Extension 1:1 Application",
+    curl: "C-Curl • 9–13mm",
+    description: "Natural, elegant mascara effect tailored to client eye curvature."
   },
   {
     id: "portfolio-2",
-    title: "Micro French Line & Natural Rose",
-    category: "french",
+    title: "Kim K-Style Spiked Wispy Set",
+    category: "wispy",
     aspect: "square",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=900&auto=format&fit=crop",
-    technique: "000 Sable Brush Precision French Tip",
-    shape: "Short Square",
-    description: "Ultra-fine crisp ivory smile line on a translucent skin-matching foundation."
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop",
+    technique: "Closed Spikes with Fluffy Base Fans",
+    curl: "D-Curl Spikes • 11–16mm",
+    description: "Airy, dimensional flutter with textured vertical peaks."
   },
   {
     id: "portfolio-3",
-    title: "Molten Liquid Silver 3D Sculpt",
-    category: "chrome",
-    aspect: "portrait",
-    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=900&auto=format&fit=crop",
-    technique: "Hard Gel Relief + Liquid Chrome Finish",
-    shape: "Long Coffin",
-    description: "Futuristic organic metal drips floating across deep neutral onyx."
+    title: "Fluffy Russian Volume Full Set",
+    category: "volume",
+    aspect: "tall",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=900&auto=format&fit=crop",
+    technique: "Handcrafted 4D–6D Volume Fans",
+    curl: "CC-Curl • 10–14mm",
+    description: "Rich, velvety darkness across the lash line with featherlight softness."
   },
   {
     id: "portfolio-4",
-    title: "Minimalist Negative Space Geometrics",
-    category: "minimal",
-    aspect: "tall",
-    image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop",
-    technique: "Negative Space Hardware Overlay",
-    shape: "Soft Square",
-    description: "Clean architectural lines emphasizing natural nail plate geometry."
+    title: "Glossy Editorial Wet Look Lash Set",
+    category: "wet",
+    aspect: "portrait",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=900&auto=format&fit=crop",
+    technique: "Unbloomed Volume Fan Spikes",
+    curl: "L-Curl • 10–15mm",
+    description: "Crisp, defined dark lash bundles delivering high-fashion glossy allure."
   },
   {
     id: "portfolio-5",
-    title: "Architectural Stiletto Gel Extension",
-    category: "sculptural",
-    aspect: "portrait",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=900&auto=format&fit=crop",
-    technique: "Form-Sculpted European Hard Gel",
-    shape: "Sculpted Stiletto",
-    description: "Seamless featherweight extension with balanced structural apex."
+    title: "Textured Hybrid Blend",
+    category: "hybrid",
+    aspect: "square",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop",
+    technique: "50% Classic + 50% 3D Volume",
+    curl: "C/D Hybrid Curl • 9–14mm",
+    description: "A balanced harmony of natural separation and soft density."
   },
   {
     id: "portfolio-6",
-    title: "Deep Tortoiseshell & 24K Gold Leaf",
-    category: "art",
-    aspect: "square",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=900&auto=format&fit=crop",
-    technique: "Layered Amber Jelly & Gold Leaf Encapsulation",
-    shape: "Almond",
-    description: "Rich honey and amber depth with real hand-placed gold leaf accents."
+    title: "High-Density Mega Volume Drama",
+    category: "mega",
+    aspect: "tall",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=900&auto=format&fit=crop",
+    technique: "0.03mm Ultra-Fine 10D–14D Fans",
+    curl: "D-Curl • 12–16mm",
+    description: "Maximum fullness, intense black finish, and ultra-dramatic impact."
   },
   {
     id: "portfolio-7",
-    title: "Vanilla Latte Velvet Cat-Eye",
-    category: "minimal",
+    title: "Soft Natural Cat-Eye Hybrid",
+    category: "hybrid",
     aspect: "portrait",
-    image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=900&auto=format&fit=crop",
-    technique: "Magnetic Cat-Eye Gel Dispersion",
-    shape: "Oval",
-    description: "Velvety optical light beam moving gracefully under ambient light."
+    image: "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?q=80&w=900&auto=format&fit=crop",
+    technique: "Elongated Outer Corner Mapping",
+    curl: "M-Curl • 8–13mm",
+    description: "Subtle lifting cat-eye architecture that elongates the eye shape."
   },
   {
     id: "portfolio-8",
-    title: "Ombre Aura Gradient in Blush",
-    category: "art",
-    aspect: "tall",
-    image: "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?q=80&w=900&auto=format&fit=crop",
-    technique: "Airbrush Aura Gradient & Gloss Top",
-    shape: "Medium Almond",
-    description: "Soft ethereal crimson blush radiating from the center of translucent nude."
+    title: "Wispy Angel Lash Texture",
+    category: "wispy",
+    aspect: "square",
+    image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=900&auto=format&fit=crop",
+    technique: "Lightweight Wispy Spike Layering",
+    curl: "CC-Curl • 10–14mm",
+    description: "Feathered, angelic lash distribution with seamless natural blend."
   },
   {
     id: "portfolio-9",
-    title: "Double-Line Floating French",
-    category: "french",
-    aspect: "square",
+    title: "Deep Dramatic Russian Volume",
+    category: "volume",
+    aspect: "portrait",
     image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=900&auto=format&fit=crop",
-    technique: "Linear French Double Line Art",
-    shape: "Squoval",
-    description: "Modernized editorial take on classic Parisian elegance."
+    technique: "Precision Handmade Fan Distribution",
+    curl: "D-Curl • 11–15mm",
+    description: "Fluffy volume symmetry designed for photogenic all-day wear."
   }
 ];
 
 export const SHOWCASE_CAROUSEL_IMAGES = [
   {
     id: "showcase-1",
-    title: "Precision Cuticle Architecture",
-    subtitle: "Dry Hardware Mastercraft",
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1200&auto=format&fit=crop"
+    title: "Precision Eye Mapping & Isolation",
+    subtitle: "Bespoke Lash Architecture",
+    image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "showcase-2",
-    title: "High-Fashion Editorial Finishes",
-    subtitle: "Oyster Chrome & Molten Metals",
-    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200&auto=format&fit=crop"
+    title: "Custom Wispy & Wet Look Effects",
+    subtitle: "High-Fashion Eye Artistry",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "showcase-3",
-    title: "Sculpted Natural Lightweight Extensions",
-    subtitle: "Custom Form Architecture",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200&auto=format&fit=crop"
+    title: "Featherlight Volume & Mega Volume",
+    subtitle: "Fluffy Density Without Weight",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "showcase-4",
-    title: "Negative Space & Clean Lines",
-    subtitle: "Timeless Minimalist Beauty",
-    image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=1200&auto=format&fit=crop"
+    title: "Where Every Blink Speaks Confidence",
+    subtitle: "Lashed by Beejay Studio",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop"
   }
 ];

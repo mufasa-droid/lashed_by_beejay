@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Clock, Sparkles, Check, ArrowRight, Shield } from 'lucide-react';
+import { X, Sparkles, Check, ArrowRight, ShieldCheck, Eye } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 
 export default function ServiceModal({ service, isOpen, onClose, onBookService }) {
@@ -33,7 +33,7 @@ export default function ServiceModal({ service, isOpen, onClose, onBookService }
     >
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-[#121110]/70 backdrop-blur-md transition-opacity animate-fadeIn"
+        className="fixed inset-0 bg-[#121110]/75 backdrop-blur-md transition-opacity animate-fadeIn"
         onClick={onClose}
       />
 
@@ -43,7 +43,7 @@ export default function ServiceModal({ service, isOpen, onClose, onBookService }
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-[#181615]/60 hover:bg-[#181615] text-white transition-colors backdrop-blur-sm"
+          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-[#181615]/70 hover:bg-[#181615] text-white transition-colors backdrop-blur-sm"
           aria-label="Close service detail"
         >
           <X className="w-5 h-5" />
@@ -60,8 +60,8 @@ export default function ServiceModal({ service, isOpen, onClose, onBookService }
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:hidden" />
             <div className="absolute bottom-4 left-4 text-white md:hidden">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#E8DEC8] block">
-                {service.category.toUpperCase()}
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#E8DEC8] block font-medium">
+                {service.categoryLabel || service.category}
               </span>
               <h3 className="font-serif text-xl font-light">{service.name}</h3>
             </div>
@@ -74,58 +74,54 @@ export default function ServiceModal({ service, isOpen, onClose, onBookService }
               {/* Header */}
               <div className="hidden md:block">
                 <span className="text-[10px] uppercase tracking-[0.25em] text-[#8F7249] font-semibold block mb-1">
-                  Atelier Service Protocol • {service.category.toUpperCase()}
+                  {BUSINESS_CONFIG.brandName} • {service.categoryLabel || service.category.toUpperCase()}
                 </span>
                 <h2 id="service-modal-title" className="font-serif text-2xl sm:text-3xl font-light text-[#141312]">
                   {service.name}
                 </h2>
               </div>
 
-              {/* Price & Duration Bar */}
+              {/* Price Bar */}
               <div className="flex items-center gap-4 py-3 my-3 border-y border-[#EAE6DE]">
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#8E8A85] block">Investment</span>
-                  <span className="font-serif text-2xl font-semibold text-[#141312]">
+                  <span className="text-[10px] uppercase tracking-wider text-[#8E8A85] block">Official Rate</span>
+                  <span className="font-serif text-2xl sm:text-3xl font-semibold text-[#141312]">
                     {BUSINESS_CONFIG.currency}{service.price}
                   </span>
                 </div>
-                <div className="h-8 w-[1px] bg-[#EAE6DE]" />
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#8E8A85] block">Session Duration</span>
-                  <span className="text-sm font-medium text-[#141312] flex items-center gap-1.5 mt-0.5">
-                    <Clock className="w-3.5 h-3.5 text-[#C5A880]" /> {service.duration}
-                  </span>
-                </div>
+                {service.styleSummary && (
+                  <>
+                    <div className="h-8 w-[1px] bg-[#EAE6DE]" />
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider text-[#8E8A85] block">Style Profile</span>
+                      <span className="text-xs font-medium text-[#5C5854] block mt-0.5">
+                        {service.styleSummary}
+                      </span>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Description */}
               <div className="space-y-4 text-xs sm:text-sm text-[#5C5854] leading-relaxed">
-                <p>{service.fullDescription || service.shortDescription}</p>
+                <p className="font-light">{service.fullDescription || service.shortDescription}</p>
 
-                {/* What's Included */}
-                {service.includes && service.includes.length > 0 && (
-                  <div className="pt-2">
-                    <h4 className="text-xs uppercase tracking-[0.18em] font-semibold text-[#141312] mb-2.5">
-                      What's Included in This Ritual:
-                    </h4>
-                    <ul className="space-y-2">
-                      {service.includes.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs text-[#423E3A]">
-                          <Check className="w-3.5 h-3.5 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                {/* Key Benefits */}
+                <div className="bg-[#FAF7F0] border border-[#E8E4DC] p-3.5 rounded-xl space-y-2 text-xs">
+                  <div className="flex items-start gap-2 text-[#423E3A]">
+                    <Check className="w-3.5 h-3.5 text-[#8F7249] flex-shrink-0 mt-0.5" />
+                    <span>Customized eye mapping and length graduation to protect natural lashes.</span>
                   </div>
-                )}
+                  <div className="flex items-start gap-2 text-[#423E3A]">
+                    <Check className="w-3.5 h-3.5 text-[#8F7249] flex-shrink-0 mt-0.5" />
+                    <span>Applied with medical-grade, long-retention, oil-sensitive adhesive.</span>
+                  </div>
+                </div>
 
-                {/* Ideal For */}
-                {service.idealFor && (
-                  <div className="bg-[#F5F1E8] border border-[#E3DCD0] p-3 rounded-lg text-xs text-[#5C5854]">
-                    <span className="font-semibold text-[#141312]">Ideal For: </span>
-                    {service.idealFor}
-                  </div>
-                )}
+                {/* Policy note */}
+                <div className="text-[11px] text-[#8A847C] leading-normal pt-1">
+                  * A {BUSINESS_CONFIG.currency}{BUSINESS_CONFIG.depositAmount} non-refundable deposit is required to secure your booking slot on WhatsApp.
+                </div>
               </div>
             </div>
 

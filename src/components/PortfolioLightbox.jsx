@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { BUSINESS_CONFIG } from '../config/businessConfig';
 
 export default function PortfolioLightbox({ items, currentIndex, isOpen, onClose, onPrev, onNext }) {
   // Keyboard navigation
@@ -47,7 +48,7 @@ export default function PortfolioLightbox({ items, currentIndex, isOpen, onClose
       <div className="absolute top-0 left-0 right-0 z-30 p-6 flex items-center justify-between text-white/80">
         <div className="flex items-center gap-3">
           <span className="text-xs uppercase tracking-[0.25em] text-[#C5A880] font-semibold">
-            Maison Éclat Archive
+            {BUSINESS_CONFIG.brandName} • LASH ARCHIVE
           </span>
           <span className="text-white/30 text-xs">•</span>
           <span className="text-xs tracking-wider font-mono">
@@ -78,7 +79,7 @@ export default function PortfolioLightbox({ items, currentIndex, isOpen, onClose
             {currentItem.title}
           </h3>
           <p className="text-xs text-white/60 mt-1">
-            <span className="text-[#C5A880] font-medium">{currentItem.technique}</span> • {currentItem.shape}
+            <span className="text-[#C5A880] font-medium">{currentItem.technique}</span> {currentItem.curl ? `• ${currentItem.curl}` : ''}
           </p>
           {currentItem.description && (
             <p className="text-xs text-white/40 mt-1.5 font-light italic">

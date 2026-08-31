@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowUp, Heart, Sparkles, MessageCircle } from 'lucide-react';
-import { InstagramIcon, TikTokIcon, WhatsAppIcon } from './SocialIcons';
+import { ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
+import { InstagramIcon, WhatsAppIcon } from './SocialIcons';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 
 export default function Footer({ onOpenBooking }) {
@@ -9,12 +9,13 @@ export default function Footer({ onOpenBooking }) {
   };
 
   const navLinks = [
-    { label: 'Featured Services', href: '#services' },
+    { label: 'Signature Sets', href: '#services' },
+    { label: 'Lash Style Guide', href: '#lash-styles' },
     { label: 'Full Menu Catalog', href: '#catalog' },
     { label: 'Selected Works', href: '#portfolio' },
-    { label: 'The Studio Philosophy', href: '#about' },
-    { label: 'Client Reviews', href: '#testimonials' },
-    { label: 'Location & Contact', href: '#contact' },
+    { label: 'The Studio', href: '#about' },
+    { label: 'Care & Policy', href: '#policies' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -25,11 +26,17 @@ export default function Footer({ onOpenBooking }) {
           
           {/* Brand Col (5 cols) */}
           <div className="md:col-span-5 space-y-4">
-            <span className="font-serif text-3xl tracking-[0.18em] font-light uppercase text-white block">
-              {BUSINESS_CONFIG.brandName}
-            </span>
+            <div>
+              <span className="font-serif text-2xl sm:text-3xl tracking-[0.18em] font-light uppercase text-white block">
+                {BUSINESS_CONFIG.brandName}
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A880] font-mono block mt-0.5">
+                {BUSINESS_CONFIG.brandDescriptor}
+              </span>
+            </div>
+
             <p className="text-xs text-[#9E988F] font-light max-w-sm leading-relaxed">
-              {BUSINESS_CONFIG.tagline}. Dedicated to master hardware cuticle precision, bespoke hard gel extensions, and high-fashion editorial finishes in SoHo, New York.
+              {BUSINESS_CONFIG.tagline} Bespoke eyelash extensions, precision eye mapping, and private studio sessions.
             </p>
             
             <div className="pt-2">
@@ -38,7 +45,7 @@ export default function Footer({ onOpenBooking }) {
                 className="inline-flex items-center gap-2 bg-[#1F1D1B] hover:bg-[#C5A880] hover:text-[#121110] px-4 py-2.5 rounded-full text-[11px] uppercase tracking-widest text-[#E8DEC8] border border-white/10 transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
-                <span>WhatsApp Appointment Concierge</span>
+                <span>Book Appointment (09077824079)</span>
               </button>
             </div>
           </div>
@@ -67,27 +74,25 @@ export default function Footer({ onOpenBooking }) {
             </ul>
           </div>
 
-          {/* Studio Hours & Socials (3 cols) */}
+          {/* Studio Contact & Socials (3 cols) */}
           <div className="md:col-span-3 space-y-3">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-semibold block mb-3">
-              Atelier Location
+              Studio Connect
             </span>
             <p className="text-xs text-[#A49E96] leading-relaxed">
-              {BUSINESS_CONFIG.contact.address}<br />
-              {BUSINESS_CONFIG.contact.city}<br />
-              {BUSINESS_CONFIG.contact.phone}
+              WhatsApp: {BUSINESS_CONFIG.displayPhone}<br />
+              Instagram: {BUSINESS_CONFIG.contact.instagram}<br />
+              Sessions: Private By Appointment
             </p>
             <div className="pt-2 flex items-center gap-3 text-xs text-[#C5A880]">
-              <a href={BUSINESS_CONFIG.socials.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                Instagram
+              <a href={BUSINESS_CONFIG.socials.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                <InstagramIcon className="w-3.5 h-3.5" />
+                <span>Instagram</span>
               </a>
               <span>•</span>
-              <a href={BUSINESS_CONFIG.socials.tiktok.url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                TikTok
-              </a>
-              <span>•</span>
-              <a href={BUSINESS_CONFIG.socials.whatsapp.url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                WhatsApp
+              <a href={BUSINESS_CONFIG.socials.whatsapp.url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                <WhatsAppIcon className="w-3.5 h-3.5" />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
@@ -97,7 +102,7 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6E6963]">
           <p>
-            © {new Date().getFullYear()} {BUSINESS_CONFIG.brandName}. All rights reserved. Architectural nail artistry.
+            © {new Date().getFullYear()} {BUSINESS_CONFIG.brandName}. All rights reserved. Where every blink speaks confidence.
           </p>
 
           <button

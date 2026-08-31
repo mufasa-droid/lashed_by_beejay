@@ -21,9 +21,10 @@ export default function Navbar({ onOpenBooking }) {
 
   const navLinks = [
     { label: 'Services', href: '#services' },
+    { label: 'Lash Styles', href: '#lash-styles' },
     { label: 'Our Work', href: '#portfolio' },
     { label: 'The Studio', href: '#about' },
-    { label: 'Reviews', href: '#testimonials' },
+    { label: 'Policies', href: '#policies' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -53,16 +54,16 @@ export default function Navbar({ onOpenBooking }) {
             className="group flex flex-col items-start focus:outline-none"
             aria-label={`${BUSINESS_CONFIG.brandName} - Home`}
           >
-            <span className="font-serif text-xl sm:text-2xl tracking-[0.18em] font-medium text-[#181615] uppercase transition-colors group-hover:text-[#8F7249]">
+            <span className="font-serif text-lg sm:text-2xl tracking-[0.18em] font-medium text-[#181615] uppercase transition-colors group-hover:text-[#8F7249]">
               {BUSINESS_CONFIG.brandName}
             </span>
             <span className="text-[9px] uppercase tracking-[0.3em] text-[#8E8A85] font-sans -mt-0.5">
-              Haute Nail Studio
+              {BUSINESS_CONFIG.brandDescriptor}
             </span>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-[#5C5854]">
+          <nav className="hidden lg:flex items-center space-x-7 text-xs uppercase tracking-[0.18em] font-medium text-[#5C5854]">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -76,10 +77,10 @@ export default function Navbar({ onOpenBooking }) {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={() => onOpenBooking(null)}
-              className="bg-[#181615] text-[#F9F7F2] hover:bg-[#33302D] px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] font-medium transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] flex items-center gap-2 group"
+              className="bg-[#181615] text-[#FAF8F5] hover:bg-[#33302D] px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] font-medium transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] flex items-center gap-2 group"
             >
               <span>Book Appointment</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#C5A880] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -87,10 +88,10 @@ export default function Navbar({ onOpenBooking }) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-3">
+          <div className="flex lg:hidden items-center space-x-3">
             <button
               onClick={() => onOpenBooking(null)}
-              className="bg-[#181615] text-[#F9F7F2] px-3.5 py-1.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-medium flex items-center gap-1.5"
+              className="bg-[#181615] text-[#FAF8F5] px-3.5 py-1.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-medium flex items-center gap-1.5"
             >
               <span>Book</span>
             </button>
@@ -109,7 +110,7 @@ export default function Navbar({ onOpenBooking }) {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-0 z-50 bg-[#FBF9F5] flex flex-col justify-between p-8 md:hidden transition-all duration-500 ease-luxury ${
+        className={`fixed inset-0 z-50 bg-[#FBF9F5] flex flex-col justify-between p-8 lg:hidden transition-all duration-500 ease-luxury ${
           mobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-8 pointer-events-none'
         }`}
       >
@@ -119,7 +120,7 @@ export default function Navbar({ onOpenBooking }) {
               {BUSINESS_CONFIG.brandName}
             </span>
             <span className="text-[9px] uppercase tracking-[0.3em] text-[#8E8A85]">
-              Haute Nail Studio
+              {BUSINESS_CONFIG.brandDescriptor}
             </span>
           </div>
           <button
@@ -131,14 +132,14 @@ export default function Navbar({ onOpenBooking }) {
           </button>
         </div>
 
-        <nav className="flex flex-col space-y-6 my-auto">
+        <nav className="flex flex-col space-y-5 my-auto">
           {navLinks.map((link, idx) => (
             <a
               key={link.label}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="font-serif text-3xl text-[#181615] hover:text-[#8F7249] transition-colors flex items-center justify-between"
-              style={{ transitionDelay: `${idx * 50}ms` }}
+              className="font-serif text-2xl sm:text-3xl text-[#181615] hover:text-[#8F7249] transition-colors flex items-center justify-between"
+              style={{ transitionDelay: `${idx * 40}ms` }}
             >
               <span>{link.label}</span>
               <ArrowUpRight className="w-5 h-5 text-[#C5A880]" />
@@ -152,13 +153,13 @@ export default function Navbar({ onOpenBooking }) {
               setMobileMenuOpen(false);
               onOpenBooking(null);
             }}
-            className="w-full bg-[#181615] text-[#F9F7F2] py-4 rounded-xl text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center gap-2 shadow-lg"
+            className="w-full bg-[#181615] text-[#FAF8F5] py-4 rounded-xl text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center gap-2 shadow-lg"
           >
             <MessageCircle className="w-4 h-4 text-[#25D366]" />
-            <span>Book Appointment via WhatsApp</span>
+            <span>Book via WhatsApp</span>
           </button>
           <p className="text-center text-xs text-[#8E8A85]">
-            {BUSINESS_CONFIG.contact.address} • {BUSINESS_CONFIG.contact.city}
+            Instagram: {BUSINESS_CONFIG.contact.instagram} • Tel: {BUSINESS_CONFIG.displayPhone}
           </p>
         </div>
       </div>

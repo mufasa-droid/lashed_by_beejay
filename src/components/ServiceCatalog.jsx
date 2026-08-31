@@ -23,18 +23,18 @@ export default function ServiceCatalog({ onSelectDetail, onQuickBook }) {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-            The Studio Menu
+            The Complete Menu
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight mb-4">
-            Comprehensive Service Catalog
+            Service Catalog & Pricing
           </h2>
           <p className="text-xs sm:text-sm text-[#5C5854] font-light leading-relaxed">
-            All services include our signature hardware cuticle prep, nail plate rebalancing, and bespoke finish consultation.
+            Transparent pricing for full sets, 2–3 week maintenance refills, and specialized lash care add-ons.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 mb-12 gap-2 scrollbar-none no-scrollbar">
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 mb-12 gap-2 no-scrollbar">
           {SERVICE_CATEGORIES.map((cat) => (
             <button
               key={cat.id}

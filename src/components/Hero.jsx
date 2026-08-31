@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Sparkles, Shield, Clock, Award } from 'lucide-react';
+import { ArrowRight, Sparkles, Eye, ShieldCheck, Heart } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 import LuxuryVisualCanvas from '../three/LuxuryVisualCanvas';
 import { animateHeroEntrance } from '../animations/gsapEffects';
@@ -45,13 +45,13 @@ export default function Hero({ onOpenBooking }) {
           {/* Left Column: Editorial Typography & CTAs (7 cols) */}
           <div className="lg:col-span-7 space-y-8 max-w-2xl">
             
-            {/* Small Luxury Badge */}
+            {/* Small Luxury Eyebrow */}
             <div 
               ref={badgeRef} 
               className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#EFECE5] border border-[#DDD7CC] text-[11px] uppercase tracking-[0.25em] font-semibold text-[#5C5854]"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880] animate-pulse" />
-              <span>{BUSINESS_CONFIG.brandName} • NYC ATELIER</span>
+              <span>{BUSINESS_CONFIG.brandName} • {BUSINESS_CONFIG.brandDescriptor}</span>
             </div>
 
             {/* Large Asymmetric Editorial Headline */}
@@ -59,25 +59,25 @@ export default function Hero({ onOpenBooking }) {
               <div className="overflow-hidden">
                 <h1 
                   ref={title1Ref} 
-                  className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-light text-[#141312] leading-[1.05] tracking-tight"
+                  className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[4.8rem] font-light text-[#141312] leading-[1.08] tracking-tight"
                 >
-                  Your nails,
+                  Where every blink
                 </h1>
               </div>
               <div className="overflow-hidden">
                 <p 
                   ref={title2Ref} 
-                  className="font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-normal text-[#8F7249] leading-[1.05] tracking-tight"
+                  className="font-serif italic text-5xl sm:text-6xl md:text-7xl lg:text-[4.8rem] font-normal text-[#8F7249] leading-[1.08] tracking-tight"
                 >
-                  sculpted into
+                  speaks
                 </p>
               </div>
               <div className="overflow-hidden">
                 <p 
                   ref={title3Ref} 
-                  className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-light text-[#141312] leading-[1.05] tracking-tight"
+                  className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[4.8rem] font-light text-[#141312] leading-[1.08] tracking-tight"
                 >
-                  haute art.
+                  confidence.
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function Hero({ onOpenBooking }) {
               ref={subtitleRef} 
               className="text-base sm:text-lg text-[#5C5854] font-light leading-relaxed max-w-xl"
             >
-              {BUSINESS_CONFIG.shortBio} Specialized in dry hardware Russian alignment, custom hard gel extensions, and refined pearlescent finishes.
+              {BUSINESS_CONFIG.shortBio} Classic, Hybrid, Russian Volume, Mega Volume, Wispy, and Wet Look sets tailored to your signature beauty.
             </p>
 
             {/* Buttons */}
@@ -99,7 +99,7 @@ export default function Hero({ onOpenBooking }) {
                 onClick={() => onOpenBooking(null)}
                 className="bg-[#141312] text-[#FAF8F5] hover:bg-[#2C2927] active:scale-[0.99] px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-luxury flex items-center justify-center gap-3 group"
               >
-                <span>Book Bespoke Session</span>
+                <span>Book Lash Appointment</span>
                 <ArrowRight className="w-4 h-4 text-[#C5A880] group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -107,41 +107,41 @@ export default function Hero({ onOpenBooking }) {
                 onClick={scrollToPortfolio}
                 className="px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-medium text-[#141312] bg-white/60 hover:bg-white border border-[#DDD7CC] hover:border-[#141312] transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <span>Explore Portfolio</span>
+                <span>Explore Lash Work</span>
               </button>
             </div>
 
             {/* Studio Hallmark Badges */}
             <div className="pt-6 border-t border-[#EAE6DE] grid grid-cols-3 gap-4 text-left">
               <div>
-                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#141312]">4+ Weeks</span>
+                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#141312]">1:1 Mapping</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E8A85]">Custom Eye Anatomy</span>
+              </div>
+              <div>
+                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#141312]">Featherlight</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E8A85]">Zero-Damage Comfort</span>
+              </div>
+              <div>
+                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#141312]">2–3 Wk Care</span>
                 <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E8A85]">Retention Guarantee</span>
-              </div>
-              <div>
-                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#141312]">100% Clean</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E8A85]">Dry Russian Tech</span>
-              </div>
-              <div>
-                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#141312]">SoHo, NYC</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#8E8A85]">Private Sanctuary</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Three.js Interactive Luxury Art (5 cols) */}
+          {/* Right Column: Three.js Interactive Luxury Lash Art (5 cols) */}
           <div ref={visualRef} className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Decorative Frame Elements */}
+              {/* Frame Accents */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-[#C5A880]/40 rounded-tl-2xl pointer-events-none z-20" />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#C5A880]/40 rounded-br-2xl pointer-events-none z-20" />
 
               {/* Three.js Canvas Container */}
               <div className="relative rounded-2xl overflow-hidden bg-[#EFECE6] border border-[#E3DCD0] shadow-2xl">
                 <LuxuryVisualCanvas 
-                  imageUrl="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1200&auto=format&fit=crop"
-                  alt="Editorial Glazed Chrome Nail Artistry"
+                  imageUrl="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=1200&auto=format&fit=crop"
+                  alt="Lashed by Beejay — Editorial Lash Artistry"
                 />
               </div>
 
@@ -153,10 +153,10 @@ export default function Hero({ onOpenBooking }) {
                   ))}
                 </div>
                 <p className="text-[11px] text-[#2C2927] font-medium leading-tight">
-                  "The most pristine Russian manicure in Manhattan."
+                  "Flawless wispy set with light-as-air comfort."
                 </p>
                 <span className="text-[9px] uppercase tracking-wider text-[#8E8A85] block mt-1">
-                  — Vogue Contributor Review
+                  — Lashed by Beejay Client
                 </span>
               </div>
 

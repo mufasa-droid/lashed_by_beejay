@@ -1,15 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { SHOWCASE_CAROUSEL_IMAGES } from '../data/portfolio';
+import { BUSINESS_CONFIG } from '../config/businessConfig';
 import { animateSectionReveal } from '../animations/gsapEffects';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/effect-fade';
 
 export default function EditorialCarousel() {
   const [swiperInstance, setSwiperInstance] = useState(null);
@@ -32,10 +32,10 @@ export default function EditorialCarousel() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#C5A880] block mb-2">
-              Visual Mastery
+              Lash Artistry Showcase
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light tracking-tight">
-              The Haute Atelier Showcase
+              {BUSINESS_CONFIG.brandName}
             </h2>
           </div>
 
@@ -79,7 +79,7 @@ export default function EditorialCarousel() {
             }}
             className="w-full h-[460px] sm:h-[560px] lg:h-[640px]"
           >
-            {SHOWCASE_CAROUSEL_IMAGES.map((slide, idx) => (
+            {SHOWCASE_CAROUSEL_IMAGES.map((slide) => (
               <SwiperSlide key={slide.id} className="relative w-full h-full bg-[#1A1816]">
                 <img
                   src={slide.image}
@@ -106,7 +106,7 @@ export default function EditorialCarousel() {
 
         {/* Counter Indicator */}
         <div className="mt-6 flex items-center justify-between text-xs text-white/50 tracking-widest font-mono uppercase">
-          <span>DRAG OR SWIPE TO EXPLORE</span>
+          <span>SWIPE OR DRAG TO BROWSE</span>
           <span>0{activeIndex + 1} / 0{SHOWCASE_CAROUSEL_IMAGES.length}</span>
         </div>
 
