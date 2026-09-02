@@ -9,13 +9,10 @@ export default function Footer({ onOpenBooking }) {
   };
 
   const navLinks = [
-    { label: 'Signature Sets', href: '#services' },
-    { label: 'Lash Style Guide', href: '#lash-styles' },
-    { label: 'Full Menu Catalog', href: '#catalog' },
+    { label: 'Services & Pricing', href: '#services' },
     { label: 'Selected Works', href: '#portfolio' },
-    { label: 'The Studio', href: '#about' },
-    { label: 'Care & Policy', href: '#policies' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Studio Policies & Reviews', href: '#policies' },
+    { label: 'Studio Contact & Booking', href: '#contact' },
   ];
 
   return (

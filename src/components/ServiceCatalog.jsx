@@ -17,19 +17,21 @@ export default function ServiceCatalog({ onSelectDetail, onQuickBook }) {
     : SERVICES.filter(s => s.category === activeCategory);
 
   return (
-    <section id="catalog" ref={sectionRef} className="py-24 sm:py-32 bg-[#FAF7F0] border-b border-[#EAE6DE]">
+    <section id="services" ref={sectionRef} className="py-24 sm:py-32 bg-[#FBF9F5] border-b border-[#EAE6DE]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-            The Complete Menu
-          </span>
-          <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight mb-4">
-            Service Catalog & Pricing
-          </h2>
-          <p className="text-xs sm:text-sm text-[#5C5854] font-light leading-relaxed">
-            Transparent pricing for full sets, 2–3 week maintenance refills, and specialized lash care add-ons.
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div>
+            <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
+              Bespoke Lash Menu
+            </span>
+            <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight">
+              Services & Pricing
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#5C5854] max-w-md font-light leading-relaxed">
+            Hand-crafted full sets, 2–3 week refills, and specialized care add-ons customized to your eye shape.
           </p>
         </div>
 

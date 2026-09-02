@@ -20,11 +20,9 @@ export default function Navbar({ onOpenBooking }) {
   }, []);
 
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Lash Styles', href: '#lash-styles' },
-    { label: 'Our Work', href: '#portfolio' },
-    { label: 'The Studio', href: '#about' },
-    { label: 'Policies', href: '#policies' },
+    { label: 'Services & Pricing', href: '#services' },
+    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Reviews & Policies', href: '#policies' },
     { label: 'Contact', href: '#contact' },
   ];
 
