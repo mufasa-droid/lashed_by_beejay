@@ -7,8 +7,8 @@ import { animateSectionReveal } from '../animations/gsapEffects';
 export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
   const sectionRef = useRef(null);
   
-  // Highlight top 4 signature full sets
-  const featured = SERVICES.filter(s => s.featured).slice(0, 4);
+  // Highlight top 3 signature full sets
+  const featured = SERVICES.filter(s => s.featured).slice(0, 3);
 
   useEffect(() => {
     animateSectionReveal(sectionRef.current);
@@ -34,7 +34,7 @@ export default function FeaturedServices({ onSelectDetail, onOpenBooking }) {
         </div>
 
         {/* Numbered Editorial Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featured.map((service, index) => {
             const indexStr = String(index + 1).padStart(2, '0');
             return (

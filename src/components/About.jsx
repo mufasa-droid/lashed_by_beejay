@@ -25,8 +25,8 @@ export default function About({ onOpenBooking }) {
               
               <div className="relative rounded-xl overflow-hidden bg-[#DDD8CE] shadow-luxury aspect-[3/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop"
-                  alt="Lashed by Beejay — Lash Artist"
+                  src="/images/lashes/volume-set.jpg"
+                  alt="Lashed by Beejay — Lash Artistry"
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                 />
@@ -65,7 +65,7 @@ export default function About({ onOpenBooking }) {
                 At <strong className="font-medium text-[#141312]">{BUSINESS_CONFIG.brandName}</strong>, lash extensions are treated as a personalized form of facial architecture. Every eye is unique, requiring thoughtful mapping of curl, length, diameter, and fan density to enhance your natural beauty.
               </p>
               <p>
-                From effortless everyday classic sets to sultry wet looks and dramatic mega volume, we prioritize meticulous isolation, clean application, and premium lightweight fibers. No clumping, no heavy weighing down—just immaculate lashes that let you wake up radiant and confident every morning.
+                From effortless everyday classic sets to textured hybrid blends and dramatic Russian volume, we prioritize meticulous isolation, clean application, and premium lightweight fibers. No clumping, no heavy weighing down—just immaculate lashes that let you wake up radiant and confident every morning.
               </p>
             </div>
 

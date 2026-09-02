@@ -16,7 +16,7 @@ export default function BookingCtaSection({ onOpenBooking }) {
       {/* Editorial Background Image with Dark Vignette */}
       <div className="absolute inset-0 z-0 opacity-20 mix-blend-luminosity">
         <img
-          src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1600&auto=format&fit=crop"
+          src="/images/lashes/hybrid-set.jpg"
           alt="Lashed by Beejay Lash Studio"
           className="w-full h-full object-cover"
         />

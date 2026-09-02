@@ -8,7 +8,7 @@ export const LASH_STYLE_GUIDE = [
     name: "Classic",
     eyebrow: "1:1 Single Lash Ratio",
     description: "Natural & elegant everyday look. One extension is applied to each natural lash, offering subtle definition and clean mascara effect.",
-    image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=900&auto=format&fit=crop",
+    image: "/images/lashes/classic-set.jpg",
     vibe: "Natural • Clean • Timeless"
   },
   {
@@ -16,7 +16,7 @@ export const LASH_STYLE_GUIDE = [
     name: "Hybrid",
     eyebrow: "50% Classic + 50% Volume",
     description: "A perfect mix of classic and volume lashes. Gives a textured, dimensional appearance with gentle density.",
-    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop",
+    image: "/images/lashes/hybrid-set.jpg",
     vibe: "Textured • Soft Dimension"
   },
   {
@@ -24,32 +24,8 @@ export const LASH_STYLE_GUIDE = [
     name: "Volume",
     eyebrow: "3D–6D Handmade Fans",
     description: "Full, fluffy, and glamorous. Multiple ultra-light extensions fanned out on every natural lash for dense coverage.",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=900&auto=format&fit=crop",
+    image: "/images/lashes/volume-set.jpg",
     vibe: "Fluffy • Glamorous • Velvety"
-  },
-  {
-    id: "style-mega",
-    name: "Mega Volume",
-    eyebrow: "10D–16D Micro-Fine Fans",
-    description: "Maximum fullness for a bold statement. Delivers an intense, pitch-black lash line with ultra-featherlight fibers.",
-    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=900&auto=format&fit=crop",
-    vibe: "Maximum Density • Bold Impact"
-  },
-  {
-    id: "style-wispy",
-    name: "Wispy",
-    eyebrow: "Spiked & Layered Texture",
-    description: "Soft, textured, and trendy. High and low lash spikes create an airy, dynamic, and eye-catching Kim K aesthetic.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop",
-    vibe: "Airy • Spiked • Trendsetting"
-  },
-  {
-    id: "style-wet",
-    name: "Wet Look",
-    eyebrow: "Closed Fan Spikes",
-    description: "Defined, glossy lash effect. Distinct closed spikes resemble freshly mascaraed wet lashes with editorial edge.",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=900&auto=format&fit=crop",
-    vibe: "Defined • Glossy • High Fashion"
   }
 ];
 
@@ -75,7 +51,7 @@ export default function LashStyles({ onOpenBooking }) {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5C5854] max-w-md font-light leading-relaxed">
-            Not sure which set suits you best? Explore the 6 signature lash aesthetics crafted at Lashed by Beejay.
+            Not sure which set suits you best? Explore the 3 signature lash aesthetics crafted at Lashed by Beejay.
           </p>
         </div>
 

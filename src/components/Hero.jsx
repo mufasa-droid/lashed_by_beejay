@@ -87,7 +87,7 @@ export default function Hero({ onOpenBooking }) {
               ref={subtitleRef} 
               className="text-base sm:text-lg text-[#5C5854] font-light leading-relaxed max-w-xl"
             >
-              {BUSINESS_CONFIG.shortBio} Classic, Hybrid, Russian Volume, Mega Volume, Wispy, and Wet Look sets tailored to your signature beauty.
+              {BUSINESS_CONFIG.shortBio} Classic, Hybrid, and Russian Volume sets tailored to your signature beauty.
             </p>
 
             {/* Buttons */}
@@ -140,7 +140,7 @@ export default function Hero({ onOpenBooking }) {
               {/* Three.js Canvas Container */}
               <div className="relative rounded-2xl overflow-hidden bg-[#EFECE6] border border-[#E3DCD0] shadow-2xl">
                 <LuxuryVisualCanvas 
-                  imageUrl="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=1200&auto=format&fit=crop"
+                  imageUrl="/images/lashes/volume-set.jpg"
                   alt="Lashed by Beejay — Editorial Lash Artistry"
                 />
               </div>
