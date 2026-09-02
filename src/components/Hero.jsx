@@ -140,7 +140,7 @@ export default function Hero({ onOpenBooking }) {
               {/* Three.js Canvas Container */}
               <div className="relative rounded-2xl overflow-hidden bg-[#EFECE6] border border-[#E3DCD0] shadow-2xl">
                 <LuxuryVisualCanvas 
-                  imageUrl="/images/lashes/volume-set.jpg"
+                  imageUrl="/images/lashes/classic-set.jpg"
                   alt="Lashed by Beejay — Editorial Lash Artistry"
                 />
               </div>
