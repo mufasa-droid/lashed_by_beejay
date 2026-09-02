@@ -1,76 +1,68 @@
 import React from 'react';
-import { ArrowRight, Eye, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 
 export default function ServiceCard({ service, onSelectDetail, onQuickBook }) {
   return (
-    <div className="group bg-[#FFFFFF] border border-[#E8E4DC] rounded-xl overflow-hidden shadow-sm hover:shadow-luxury transition-all duration-500 flex flex-col justify-between">
+    <div className="group bg-[#FFFFFF] border border-[#E8E4DC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-between">
       
-      {/* Image Container with subtle hover zoom */}
+      {/* Photography Container with gentle hover zoom */}
       <div 
         onClick={() => onSelectDetail(service)}
-        className="relative h-60 sm:h-64 w-full overflow-hidden cursor-pointer bg-[#F0EDE6]"
+        className="relative h-64 sm:h-72 w-full overflow-hidden cursor-pointer bg-[#F0EDE6]"
       >
         <img
           src={service.image}
           alt={service.name}
-          className="w-full h-full object-cover object-center transition-transform duration-700 ease-luxury group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-white flex items-center gap-1.5">
-            <Eye className="w-3.5 h-3.5" /> View Details
+        
+        {/* Subtle Category Caption */}
+        <div className="absolute top-4 left-4">
+          <span className="text-[10px] uppercase tracking-[0.22em] font-medium text-[#FAF8F5] bg-[#141312]/80 backdrop-blur-sm px-3 py-1 rounded-full">
+            {service.categoryLabel || 'Full Set'}
           </span>
-        </div>
-
-        {/* Category Pill */}
-        <div className="absolute top-3.5 left-3.5 bg-[#141312]/80 backdrop-blur-md px-3 py-1 rounded-full text-[9px] uppercase tracking-[0.2em] font-semibold text-[#FAF8F5]">
-          {service.categoryLabel || service.category}
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
         <div>
-          <div className="flex items-start justify-between gap-2 mb-2">
-            <h3 
-              onClick={() => onSelectDetail(service)}
-              className="font-serif text-xl font-medium text-[#141312] group-hover:text-[#8F7249] transition-colors cursor-pointer"
-            >
-              {service.name}
-            </h3>
-          </div>
+          <h3 
+            onClick={() => onSelectDetail(service)}
+            className="font-serif text-2xl font-normal text-[#141312] group-hover:text-[#8F7249] transition-colors cursor-pointer"
+          >
+            {service.name}
+          </h3>
           
-          <p className="text-xs text-[#6E6963] line-clamp-2 leading-relaxed font-light">
+          <p className="text-xs sm:text-[13px] text-[#6E6963] leading-relaxed font-light mt-2 line-clamp-2">
             {service.shortDescription}
           </p>
         </div>
 
         {/* Price & Actions */}
-        <div className="pt-3 border-t border-[#F0EDE6] flex items-center justify-between">
+        <div className="pt-4 border-t border-[#F0EDE6] flex items-baseline justify-between">
           <div>
-            <span className="font-serif text-2xl font-semibold text-[#141312]">
+            <span className="font-serif text-2xl font-normal text-[#141312]">
               {BUSINESS_CONFIG.currency}{service.price}
-            </span>
-            <span className="text-[10px] text-[#8E8A85] block font-sans uppercase tracking-wider">
-              {service.category === 'refills' ? '2–3 Wk Refill' : 'Official Rate'}
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={() => onSelectDetail(service)}
-              className="px-3 py-2 text-[11px] uppercase tracking-wider font-semibold text-[#5C5854] hover:text-[#141312] hover:bg-[#F5F2EB] rounded-lg transition-colors"
+              className="px-3 py-2 text-xs uppercase tracking-wider font-medium text-[#6E6963] hover:text-[#141312] hover:bg-[#F5F2EB] rounded-lg transition-colors"
             >
               Details
             </button>
             <button
               onClick={() => onQuickBook(service)}
-              className="bg-[#141312] text-[#FAF8F5] hover:bg-[#2C2927] active:scale-[0.97] px-4 py-2 rounded-lg text-[11px] uppercase tracking-wider font-medium transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+              className="bg-[#141312] text-[#FAF8F5] hover:bg-[#2C2927] active:scale-[0.98] px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all duration-300 flex items-center gap-1.5 shadow-sm"
               aria-label={`Book ${service.name}`}
             >
               <span>Book</span>
-              <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
             </button>
           </div>
         </div>
@@ -79,3 +71,4 @@ export default function ServiceCard({ service, onSelectDetail, onQuickBook }) {
     </div>
   );
 }
+

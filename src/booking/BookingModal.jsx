@@ -105,11 +105,11 @@ export default function BookingModal({ isOpen, onClose, initialService = null })
         {/* Header Ribbon */}
         <div className="bg-[#141312] text-[#FAF8F5] px-6 py-5 flex items-center justify-between border-b border-[#2C2927]">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-semibold block mb-0.5">
-              {BUSINESS_CONFIG.brandName} • APPOINTMENT CONCIERGE
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-medium block mb-0.5">
+              {BUSINESS_CONFIG.brandName} • Appointment Booking
             </span>
             <h2 id="booking-modal-title" className="font-serif text-xl sm:text-2xl font-light tracking-wide">
-              Reserve Your Lash Session
+              Book Your Lash Session
             </h2>
           </div>
           <button

@@ -225,9 +225,9 @@ export default function LuxuryVisualCanvas({ imageUrl, alt = "Luxury Editorial A
         </div>
       )}
 
-      {/* Subtle Editorial Overlay Tag */}
-      <div className="absolute bottom-6 left-6 z-10 pointer-events-none bg-[#121110]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-[0.2em] text-[#E8DEC8]">
-        Interactive 3D Depth • Atelier Edition
+      {/* Clean Subtle Corner Mark */}
+      <div className="absolute bottom-4 left-4 z-10 pointer-events-none text-[9px] uppercase tracking-[0.25em] text-white/70 bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full">
+        Classic Set
       </div>
     </div>
   );

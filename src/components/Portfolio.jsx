@@ -22,7 +22,7 @@ export default function Portfolio() {
     setTimeout(() => {
       setSelectedCategory(catId);
       setIsFiltering(false);
-    }, 200);
+    }, 180);
   };
 
   const filteredItems = selectedCategory === 'all'
@@ -44,34 +44,34 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-24 sm:py-32 bg-[#FBF9F5] border-b border-[#EAE6DE]">
+    <section id="portfolio" ref={sectionRef} className="py-24 sm:py-32 bg-[#FAF7F0] border-b border-[#EAE6DE]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
         {/* Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-              The Gallery
+            <span className="text-[11px] uppercase tracking-[0.28em] font-medium text-[#8F7249] block mb-2">
+              Visual Archive
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight">
-              Selected Lash Works & Sets
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#141312] tracking-tight">
+              Selected Lash Work
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5C5854] max-w-md font-light leading-relaxed">
-            Visual proof of our handcrafted volume fans, seamless classic isolation, and customized wispy mapping.
+            Real client results demonstrating clean lash isolation, soft fan density, and symmetry tailored to individual eye shapes.
           </p>
         </div>
 
-        {/* Filter Categories */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 mb-12 gap-2 no-scrollbar">
+        {/* Minimal Typographic Filter Bar */}
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 mb-14 gap-2 no-scrollbar border-b border-[#EAE6DE]/60">
           {PORTFOLIO_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               onClick={() => handleCategoryChange(cat.id)}
-              className={`px-5 py-2 rounded-full text-xs uppercase tracking-[0.18em] font-medium whitespace-nowrap transition-all duration-300 border ${
+              className={`px-5 py-2 rounded-full text-xs uppercase tracking-[0.18em] font-medium whitespace-nowrap transition-all duration-300 ${
                 selectedCategory === cat.id
-                  ? 'bg-[#141312] text-[#FAF8F5] border-[#141312] shadow-sm'
-                  : 'bg-white/70 text-[#5C5854] border-[#DDD8CE] hover:border-[#141312] hover:text-[#141312]'
+                  ? 'bg-[#141312] text-[#FAF8F5]'
+                  : 'bg-transparent text-[#6E6963] hover:text-[#141312]'
               }`}
             >
               {cat.name}
@@ -79,10 +79,10 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Gallery Grid with Asymmetry */}
+        {/* Lookbook Gallery Grid with Subtle Asymmetry */}
         <div 
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 ${
-            isFiltering ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 transition-all duration-300 ${
+            isFiltering ? 'opacity-0 scale-[0.99]' : 'opacity-100 scale-100'
           }`}
         >
           {filteredItems.map((item) => (
@@ -108,3 +108,4 @@ export default function Portfolio() {
     </section>
   );
 }
+

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowUpRight, Sparkles } from 'lucide-react';
+import { MessageCircle, ArrowUpRight } from 'lucide-react';
 import { InstagramIcon, WhatsAppIcon } from './SocialIcons';
 import { BUSINESS_CONFIG } from '../config/businessConfig';
 import { animateSectionReveal } from '../animations/gsapEffects';
@@ -12,153 +12,146 @@ export default function Contact({ onOpenBooking }) {
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 sm:py-32 bg-[#FBF9F5] border-b border-[#EAE6DE]">
+    <section id="contact" ref={sectionRef} className="py-24 sm:py-32 bg-[#FAF7F0] border-b border-[#EAE6DE]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#8F7249] block mb-2">
-              Connect With Us
+            <span className="text-[11px] uppercase tracking-[0.28em] font-medium text-[#8F7249] block mb-2">
+              Get in Touch
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#141312] tracking-tight">
-              Studio Appointments & Contact
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#141312] tracking-tight">
+              Appointments & Contact
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5C5854] max-w-md font-light leading-relaxed">
-            All lash sessions are scheduled in advance via WhatsApp to ensure a private and focused client experience.
+            All appointments are booked directly on WhatsApp to ensure your lash style and time slot are tailored to you.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
-          {/* Contact Details (7 cols) */}
-          <div className="lg:col-span-7 space-y-8">
+          {/* Left: Contact Channels & Inquiries (7 cols) */}
+          <div className="lg:col-span-7 space-y-10">
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="pb-4 border-b border-[#141312] flex items-baseline justify-between">
+              <h3 className="text-xs uppercase tracking-[0.22em] font-medium text-[#141312]">
+                Direct Studio Channels
+              </h3>
+              <span className="text-[11px] text-[#8E8A85] font-light">
+                Available Daily
+              </span>
+            </div>
+
+            {/* Studio Directory Rows */}
+            <div className="divide-y divide-[#EAE6DE]">
               
-              {/* WhatsApp & Phone */}
-              <div className="p-6 bg-[#FFFFFF] border border-[#E8E4DC] rounded-2xl flex flex-col justify-between">
+              {/* WhatsApp Row */}
+              <div className="py-6 first:pt-0 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
                 <div>
-                  <div className="w-9 h-9 rounded-full bg-[#FAF7F0] border border-[#E0DAD0] flex items-center justify-center text-[#8F7249] mb-4">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-serif text-xl font-medium text-[#141312] mb-1">
-                    Direct Phone / WhatsApp
-                  </h3>
-                  <p className="text-xs text-[#5C5854] leading-relaxed">
+                  <span className="text-[10px] uppercase tracking-wider text-[#8F7249] font-medium block mb-1">
+                    Instant Messaging & Booking
+                  </span>
+                  <h4 className="font-serif text-2xl font-light text-[#141312]">
+                    WhatsApp Direct
+                  </h4>
+                  <p className="text-xs text-[#6E6963] font-light mt-1">
                     {BUSINESS_CONFIG.displayPhone}
                   </p>
                 </div>
-                <button
-                  onClick={() => onOpenBooking(null)}
-                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold text-[#8F7249] hover:text-[#141312] mt-4 transition-colors text-left"
-                >
-                  <span>Chat on WhatsApp</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </button>
-              </div>
 
-              {/* Instagram Card */}
-              <div className="p-6 bg-[#FFFFFF] border border-[#E8E4DC] rounded-2xl flex flex-col justify-between">
-                <div>
-                  <div className="w-9 h-9 rounded-full bg-[#FAF7F0] border border-[#E0DAD0] flex items-center justify-center text-[#8F7249] mb-4">
-                    <InstagramIcon className="w-4 h-4 text-[#E1306C]" />
-                  </div>
-                  <h3 className="font-serif text-xl font-medium text-[#141312] mb-1">
-                    Instagram Showcase
-                  </h3>
-                  <p className="text-xs text-[#5C5854] leading-relaxed">
-                    {BUSINESS_CONFIG.socials.instagram.handle}
-                  </p>
-                </div>
-                <a
-                  href={BUSINESS_CONFIG.socials.instagram.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold text-[#8F7249] hover:text-[#141312] mt-4 transition-colors"
-                >
-                  <span>Follow @lashed_by_beejay</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              </div>
-
-            </div>
-
-            {/* Inquiries / Quick Overview Box */}
-            <div className="p-6 sm:p-8 bg-[#FFFFFF] border border-[#E8E4DC] rounded-2xl space-y-4">
-              <h3 className="font-serif text-2xl font-normal text-[#141312]">
-                Booking & Consultations
-              </h3>
-              <p className="text-xs sm:text-sm text-[#6E6963] leading-relaxed font-light">
-                Ready for your set or refill? Reach out with your preferred date, time, and lash style. Please note that a <strong>₦{BUSINESS_CONFIG.depositAmount} non-refundable deposit</strong> is required to lock in your appointment slot.
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <a
                   href={BUSINESS_CONFIG.socials.whatsapp.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3 rounded-full border border-[#DDD7CC] hover:border-[#25D366] bg-[#FAF8F5] text-xs font-medium text-[#141312] flex items-center gap-2 transition-all hover:bg-[#25D366] hover:text-white shadow-sm"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#DDD7CC] hover:border-[#141312] hover:bg-[#141312] hover:text-[#FAF8F5] text-xs font-medium text-[#141312] transition-all self-start sm:self-auto"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                  <span>WhatsApp: {BUSINESS_CONFIG.displayPhone}</span>
+                  <span>Chat on WhatsApp</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                 </a>
+              </div>
+
+              {/* Instagram Row */}
+              <div className="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-[#8F7249] font-medium block mb-1">
+                    Visual Archive & Portfolio
+                  </span>
+                  <h4 className="font-serif text-2xl font-light text-[#141312]">
+                    Instagram
+                  </h4>
+                  <p className="text-xs text-[#6E6963] font-light mt-1">
+                    {BUSINESS_CONFIG.socials.instagram.handle}
+                  </p>
+                </div>
 
                 <a
                   href={BUSINESS_CONFIG.socials.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3 rounded-full border border-[#DDD7CC] hover:border-[#141312] bg-[#FAF8F5] text-xs font-medium text-[#141312] flex items-center gap-2 transition-all hover:bg-[#141312] hover:text-white shadow-sm"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#DDD7CC] hover:border-[#141312] hover:bg-[#141312] hover:text-[#FAF8F5] text-xs font-medium text-[#141312] transition-all self-start sm:self-auto"
                 >
                   <InstagramIcon className="w-4 h-4 text-[#E1306C]" />
-                  <span>Instagram: {BUSINESS_CONFIG.socials.instagram.handle}</span>
+                  <span>Follow @lashed_by_beejay</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                 </a>
               </div>
+
+            </div>
+
+            {/* Booking Notice */}
+            <div className="pt-4 space-y-2">
+              <h4 className="font-serif text-xl font-normal text-[#141312]">
+                Booking Consultation
+              </h4>
+              <p className="text-xs sm:text-[13px] text-[#5C5854] font-light leading-relaxed max-w-xl">
+                When reaching out, let us know your preferred date, time, and whether you're looking for a Classic, Hybrid, or Volume set. A <strong>₦{BUSINESS_CONFIG.depositAmount} non-refundable deposit</strong> confirms your appointment.
+              </p>
             </div>
 
           </div>
 
-          {/* Quick Summary Card (5 cols) */}
+          {/* Right: Studio Overview Statement (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="bg-[#181615] text-[#FAF8F5] p-8 sm:p-10 rounded-3xl border border-[#2E2A27] shadow-xl flex flex-col justify-between h-full space-y-8">
+            <div className="bg-[#141312] text-[#FAF8F5] p-8 sm:p-10 rounded-3xl space-y-8 shadow-sm">
               
               <div>
-                <div className="flex items-center gap-2 text-[#C5A880] text-xs uppercase tracking-[0.2em] font-semibold mb-3">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Lash Studio Information</span>
-                </div>
+                <span className="text-[10px] uppercase tracking-[0.28em] text-[#C5A880] font-medium block mb-3">
+                  Studio Details
+                </span>
                 
-                <h3 className="font-serif text-3xl font-light text-white mb-2">
+                <h3 className="font-serif text-3xl sm:text-4xl font-light text-white mb-2">
                   {BUSINESS_CONFIG.brandName}
                 </h3>
-                <p className="text-xs text-[#C5A880] tracking-widest font-mono uppercase mb-6">
-                  {BUSINESS_CONFIG.tagline}
+                <p className="text-xs text-[#8E8A85] tracking-wider uppercase">
+                  {BUSINESS_CONFIG.brandDescriptor}
                 </p>
 
-                <div className="space-y-4 text-xs tracking-wider border-t border-white/10 pt-5 text-[#A49E96]">
-                  <div className="flex items-start justify-between py-1 border-b border-white/5">
-                    <span>Studio Access:</span>
+                <div className="space-y-4 text-xs border-t border-white/10 pt-6 mt-6 text-[#A49E96]">
+                  <div className="flex items-baseline justify-between py-1.5 border-b border-white/5">
+                    <span className="font-light">Format:</span>
                     <span className="font-medium text-white">Private By Appointment</span>
                   </div>
-                  <div className="flex items-start justify-between py-1 border-b border-white/5">
-                    <span>Booking Deposit:</span>
+                  <div className="flex items-baseline justify-between py-1.5 border-b border-white/5">
+                    <span className="font-light">Deposit:</span>
                     <span className="font-medium text-white">₦{BUSINESS_CONFIG.depositAmount} (Non-refundable)</span>
                   </div>
-                  <div className="flex items-start justify-between py-1 border-b border-white/5">
-                    <span>Refills Window:</span>
-                    <span className="font-medium text-white">2–3 Weeks (40%+ Lashes)</span>
+                  <div className="flex items-baseline justify-between py-1.5 border-b border-white/5">
+                    <span className="font-light">Refill Eligibility:</span>
+                    <span className="font-medium text-white">2–3 Weeks (40%+ retention)</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4">
+              <div className="pt-2">
                 <button
                   onClick={() => onOpenBooking(null)}
-                  className="w-full bg-[#FAF8F5] text-[#181615] hover:bg-[#C5A880] py-4 rounded-xl text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                  className="w-full bg-[#FAF8F5] text-[#141312] hover:bg-[#C5A880] py-4 rounded-full text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
                 >
                   <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                  <span>Book Lash Appointment</span>
+                  <span>Start WhatsApp Booking</span>
                 </button>
               </div>
 
@@ -171,3 +164,4 @@ export default function Contact({ onOpenBooking }) {
     </section>
   );
 }
+
